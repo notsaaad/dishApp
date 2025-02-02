@@ -14,13 +14,28 @@ import { dishes } from "../DATA/data";
 import { IoMdTrash } from "@react-icons/all-files/io/IoMdTrash";
 
 const SingleDish = () => {
-  const { language, CategoryDishes, Dish, Dishid,categoryId } = useParams();
+  const { language, CategoryDishes, Dish, Dishid,category_id } = useParams();
+  console.log(useParams);
   const [quantity, setQuantity] = useState(1);
   const [inCart, setInCart] = useState(false);
 
   const dataCart = useSelector(({ cart }) => cart);
 
   const [product, setProduct] = useState({});
+
+      // ======================= Start Fatch  API menu =========================
+      const [dishes, setDishes] = useState([]);
+
+      useEffect( () => {
+        const fatchData = async  () => {
+          const result  = await  fetch('https://api.bobabliss.online/api/menus');
+          const jsonResult = await result.json();
+            setDishes(jsonResult.data);
+        };
+        fatchData();
+      }, [] );
+    
+      // ======================= End Fatch  API menu =========================
 
   useEffect(() => {
     setProduct(...dishes.filter((el) => el.id === Dishid));
@@ -123,7 +138,7 @@ const SingleDish = () => {
                 className="w-3/4"
                 disabled={quantity === 0}
                 onClick={() => {
-                  dispatch(AddToCart({ ...product, quantity: quantity,link:`${window.location.protocol}/${window.location.hostname}/${language}/${categoryId}/${encodeURI(CategoryDishes.replace(/ /g,"-"))}/${id}/${encodeURI(title.replace(/ /g,"-"))}` }));
+                  dispatch(AddToCart({ ...product, quantity: quantity,link:`${window.location.protocol}/${window.location.hostname}/${language}/${category_id}/${encodeURI(CategoryDishes.replace(/ /g,"-"))}/${id}/${encodeURI(title.replace(/ /g,"-"))}` }));
                 }}
               >
                 <IoMdCart className="mr-3 h-4 w-4" />

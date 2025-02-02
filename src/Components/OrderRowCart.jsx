@@ -24,7 +24,7 @@ const OrderRowCart = ({
 
      <div className="image sm:w-24 w-12 sm p-1">
         <img
-          src={window.location.origin+'/'+image}
+          src={image}
           className="w-full aspect-square object-cover rounded-lg"
           alt={title}
         />
