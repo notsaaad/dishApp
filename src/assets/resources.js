@@ -1,3 +1,6 @@
+
+
+
 const media = {
     //images
     logo : new URL('./images/mainlogo.png', import.meta.url).href,

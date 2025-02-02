@@ -5,11 +5,24 @@ import { Button } from "flowbite-react";
 import { IoMdTrash } from "@react-icons/all-files/io/IoMdTrash";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
-import { dishes } from "../DATA/data";
+// import { dishes } from "../DATA/data";
 
 const DishCard = ({ product }) => {
-  const { link, price, image, title,description,categoryId,CategoryDishes,id } = product;
-  const { language } = useParams();
+    // ======================= Start Fatch  API menu =========================
+    const [dishes, setDishes] = useState([]);
+
+    useEffect( () => {
+      const fatchData = async  () => {
+        const result  = await  fetch('https://api.bobabliss.online/api/menus');
+        const jsonResult = await result.json();
+          setDishes(jsonResult.data);
+      };
+      fatchData();
+    }, [] );
+  
+    // ======================= End Fatch  API menu =========================
+  const { link, price, image, name,description,category_id,CategoryDishes,id } = product;
+  const { language, type } = useParams();
 
   const [quantity, setQuantity] = useState(1);
   const [inCart, setInCart] = useState(false);
@@ -43,20 +56,20 @@ const DishCard = ({ product }) => {
 const navigate = useNavigate()
   const dispatch = useDispatch()
   const handelOrder = () =>{
-    dispatch(AddToCart({ ...product, quantity: quantity,link:`${window.location.protocol}/${window.location.hostname}/${language}/${categoryId}/${encodeURI(CategoryDishes?.replace(/ /g,"-"))}/${id}/${encodeURI(title?.replace(/ /g,"-"))}` }));
+    dispatch(AddToCart({ ...product, quantity: quantity,link:`${window.location.protocol}/${window.location.hostname}/${language}/${category_id}/${encodeURI(CategoryDishes?.replace(/ /g,"-"))}/${id}/${encodeURI(name?.replace(/ /g,"-"))}` }));
 
-    navigate(`/${language}/Cart`)
+    navigate(`/${language}/${type}/Cart`)
   }
 
   return (
 
     <div className="Single_Dish" to={link}>
     <div className="RightSide">
-      <img width={"170"} height={170} src={window.location.origin+'/'+image} className="Dish-img"alt="image 1"/>
+      <img width={"170"} height={170} src={image} className="Dish-img"alt="image 1"/>
       <div className="CartSection">
           {inCart ? (
               <div className="Cart_added">
-                <Link className="underline text-p3 " to={`/${language}/Cart`}>
+                <Link className="underline text-p3 " to={`/${language}/${type}/Cart`}>
                 View Cart
                 </Link>
                 <Button
@@ -90,9 +103,9 @@ const navigate = useNavigate()
           </div>
     </div>
     <div className="leftSide">
-    <h5 className="Dish-title">{title}</h5>
-    <h5 className="Dish-Desc">{description}</h5>
-    <h5 className="Dish-Price">{price} $</h5>
+    <h5 className="Dish-title">{name}</h5>
+    <span className="Dish-Desc">{description}</span>
+    <h5 className="Dish-Price">{price} AED</h5>
     </div>
   </div>
 

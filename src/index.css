@@ -4,7 +4,7 @@
 
 :root{
   --p1:#BBFFDD;
-  --p2:#009944;
+  --p2:#FFDE9F;
   --p3:#004422;
   --b0:#000;
   --wf:#fff;
@@ -12,10 +12,25 @@
   --n2:#707070;
   --n3:#A7A7A7;
   --main-color:palevioletred;
+  --text-color:#A95720;
 }
 
+*{
+  color:var(--text-color);
+}
 
+a{
+  color:var(--text-color)
+}
 
+#LangSelect{
+  font-size: 14px;
+  padding: 7px;
+}
+
+.Site-Name{
+  color:black  !important;
+}
 
 .cat-nav {
   scrollbar-color: #18793000 #f3f2f200;
@@ -145,21 +160,30 @@
 .leftSide{
   width: 50%;
   padding-left: 15px;
+  margin-top: 27px;
+
 }
 .Dish-title{
-  font-size: 16px;
-  font-weight: 600;
+  font-size: 15px;
+  line-height: 1.2;
+  color: black;
   margin: 5px 0;
-  margin-top: 10px;
 }
 .Dish-Desc{
   font-size: 15px;
   line-height: 1.2;
-  color: #9b9a9a;
+  color: black;
+  opacity: 0.5;
   margin: 5px 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; 
+  -webkit-box-orient: vertical;
+  overflow: hidden; 
+  text-overflow: ellipsis; 
+
 }
 .Dish-Price{
-  color: green;
+  color:black;
   font-size: 16px;
   font-weight: 500;
 }

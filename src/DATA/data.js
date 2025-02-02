@@ -11,7 +11,7 @@ import {
             "image": "images/the-life-and-opinions-of-tristram-shandy.jpg",
             "price": "600",
             "id": "2053",
-            "categoryId": "1"
+            "category_id": "1"
         },
         {
             "title": "Fairy tales",
@@ -19,7 +19,7 @@ import {
             "image": "images/fairy-tales.jpg",
             "price": "600",
             "id": "2054",
-            "categoryId": "2"
+            "category_id": "2"
         },
         {
             "title": "The Divine Comedy",
@@ -27,7 +27,7 @@ import {
             "image": "images/the-divine-comedy.jpg",
             "price": "600",
             "id": "2055",
-            "categoryId": "4"
+            "category_id": "4"
         },
         {
             "title": "The Epic Of Gilgamesh",
@@ -35,7 +35,7 @@ import {
             "image": "images/the-epic-of-gilgamesh.jpg",
             "price": "600",
             "id": "2056",
-            "categoryId": "3"
+            "category_id": "3"
         },
         {
             "title": "The Book Of Job",
@@ -43,7 +43,7 @@ import {
             "image": "images/the-book-of-job.jpg",
             "price": "600",
             "id": "2057",
-            "categoryId": "3"
+            "category_id": "3"
         },
         {
             "title": "One Thousand and One Nights",
@@ -51,7 +51,7 @@ import {
             "image": "images/the-odyssey-of-homer.jpg",
             "price": "600",
             "id": "2058",
-            "categoryId": "3"
+            "category_id": "3"
         },
         {
             "title": "Njál's Saga",
@@ -59,7 +59,7 @@ import {
             "image": "images/njals-saga.jpg",
             "price": "600",
             "id": "2059",
-            "categoryId": "4"
+            "category_id": "4"
         },
         {
             "title": "Pride and Prejudice",
@@ -67,7 +67,7 @@ import {
             "image": "images/pride-and-prejudice.jpg",
             "price": "600",
             "id": "2060",
-            "categoryId": "6"
+            "category_id": "6"
         },
         {
             "title": "Le Père Goriot",
@@ -75,7 +75,7 @@ import {
             "image": "images/le-pere-goriot.jpg",
             "price": "600",
             "id": "2061",
-            "categoryId": "5"
+            "category_id": "5"
         },
         {
             "title": "Molloy, Malone Dies, The Unnamable, the trilogy",
@@ -83,7 +83,7 @@ import {
             "image": "images/molloy-malone-dies-the-unnamable.jpg",
             "price": "600",
             "id": "2062",
-            "categoryId": "5"
+            "category_id": "5"
         },
         {
             "title": "The Decameron",
@@ -91,7 +91,7 @@ import {
             "image": "images/the-decameron.jpg",
             "price": "600",
             "id": "2063",
-            "categoryId": "4"
+            "category_id": "4"
         },
         {
             "title": "Ficciones",
@@ -99,7 +99,7 @@ import {
             "image": "images/ficciones.jpg",
             "price": "600",
             "id": "2064",
-            "categoryId": "7"
+            "category_id": "7"
         },
         {
             "title": "Wuthering Heights",
@@ -107,7 +107,7 @@ import {
             "image": "images/wuthering-heights.jpg",
             "price": "600",
             "id": "2065",
-            "categoryId": "6"
+            "category_id": "6"
         },
         {
             "title": "The Stranger",
@@ -115,7 +115,7 @@ import {
             "image": "images/the-life-and-opinions-of-tristram-shandy.jpg",
             "price": "600",
             "id": "2066",
-            "categoryId": "8"
+            "category_id": "8"
         },
         {
             "title": "Poems",
@@ -123,7 +123,7 @@ import {
             "image": "images/poems-paul-celan.jpg",
             "price": "600",
             "id": "2067",
-            "categoryId": "9"
+            "category_id": "9"
         },
         {
             "title": "Journey to the End of the Night",
@@ -131,7 +131,7 @@ import {
             "image": "images/voyage-au-bout-de-la-nuit.jpg",
             "price": "600",
             "id": "2068",
-            "categoryId": "5"
+            "category_id": "5"
         }
     
     
@@ -142,7 +142,7 @@ import {
 //         image: food,
 //         price: "200",
 //         id: "2050",
-//         categoryId: "1",
+//         category_id: "1",
 //         description:""
 //     },
 //     {
@@ -151,7 +151,7 @@ import {
 //         image: coverhome,
 //         price: "500",
 //         id: "2051",
-//         categoryId: "2",
+//         category_id: "2",
 //     },
 //     {
 //         title: "Sea fish",
@@ -159,7 +159,7 @@ import {
 //         image: food,
 //         price: "600",
 //         id: "2053",
-//         categoryId: "3",
+//         category_id: "3",
 //     },
 //     {
 //         title: "Freshwater fried dishes  fried dishes fried dishes",
@@ -167,7 +167,7 @@ import {
 //         image: coverhome,
 //         price: "600",
 //         id: "2054",
-//         categoryId: "4",
+//         category_id: "4",
 //     },
 //     {
 //         title: "Maskov",
@@ -175,7 +175,7 @@ import {
 //         image: food,
 //         price: "200",
 //         id: "2055",
-//         categoryId: "4",
+//         category_id: "4",
 //     },
 //     {
 //         title: "Sea fish",
@@ -183,7 +183,7 @@ import {
 //         image: coverhome,
 //         price: "500",
 //         id: "2056",
-//         categoryId: "3",
+//         category_id: "3",
 //     },
 //     {
 //         title: "Sea fish",
@@ -191,7 +191,7 @@ import {
 //         image: food,
 //         price: "600",
 //         id: "2057",
-//         categoryId: "2",
+//         category_id: "2",
 //     },
 //     {
 //         title: "Freshwater fried dishes  fried dishes fried dishes",
@@ -199,7 +199,7 @@ import {
 //         image: coverhome,
 //         price: "600",
 //         id: "2058",
-//         categoryId: "1",
+//         category_id: "1",
 //     },
 
  ]
@@ -212,92 +212,92 @@ export const categoirs = [
     //     description:"",
     //     link: "Maskov",
     //     image: food,
-    //     categoryId: "1",
+    //     category_id: "1",
     // },
     // {
     //     title: "Sea fish",
     //     link: "Sea-fish",
     //     description:"",
     //     image: coverhome,
-    //     categoryId: "2",
+    //     category_id: "2",
     // },
     // {
     //     title: "Sea fish",
     //     link: "Sea-fish2",
     //     description:"",
     //     image: food,
-    //     categoryId: "3",
+    //     category_id: "3",
     // },
     // {
     //     title: "Freshwater fried dishes  fried dishes fried dishes",
     //     link: "Freshwater",
     //     image: coverhome,
     //     description:"",
-    //     categoryId: "4",
+    //     category_id: "4",
     // },
 
     {
-        "title": "African Literature",
+        "name": "African Literature",
         "description": "Literary works from African authors or settings.",
         "link": "african-literature",
         "image": "images/the-life-and-opinions-of-tristram-shandy.jpg",
-        "categoryId": "1",
+        "id": "1",
         "count": "25",
     },
     {
-        "title": "European Classics",
+        "name": "European Classics",
         "description": "Classic literature from European authors.",
         "link": "european-classics",
         "image": "images/fairy-tales.jpg",
-        "categoryId": "2",
+        "id": "2",
         "count": "24",
     },
     {
-        "title": "Ancient Epics",
+        "name": "Ancient Epics",
         "description": "Epics from ancient civilizations and mythologies.",
         "link": "ancient-epics",
         "image": "images/the-epic-of-gilgamesh.jpg",
-        "categoryId": "3",
+        "id": "3",
         "count": "20",
     },
     {
-        "title": "Medieval Literature",
+        "name": "Medieval Literature",
         "description": "Literature from the medieval period.",
         "link": "medieval-literature",
         "image": "images/the-divine-comedy.jpg",
-        "categoryId": "4",
+        "id": "4",
         "count": "10",
     },
     {
-        "title": "French Literature",
+        "name": "French Literature",
         "description": "Works of literature from French authors.",
         "link": "french-literature",
         "image": "images/le-pere-goriot.jpg",
-        "categoryId": "5",
+        "id": "5",
         "count": "20",
     },
     {
-        "title": "English Literature",
+        "name": "English Literature",
         "description": "Classical and modern works from English authors.",
         "link": "english-literature",
         "image": "images/pride-and-prejudice.jpg",
-        "categoryId": "6",
+        "id": "6",
         "count": "22",
     },
     {
-        "title": "South American Literature",
+        "name": "South American Literature",
         "description": "Literature by South American authors.",
         "link": "south-american-literature",
         "image": "images/ficciones.jpg",
-        "categoryId": "7",
+        "id": "7",
         "count": "23",
     },
     {
-        "title": "Portogal Literature",
+        "name": "Portogal Literature",
         "description": "Classical and modern works from English authors.",
         "link": "english-literature",
         "image": "images/wuthering-heights.jpg",
-        "categoryId": "8",
+        "id": "8",
         "count": "3",
     },
 

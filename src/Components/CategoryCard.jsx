@@ -10,7 +10,7 @@ const CategoryCard = ({title,link,image,language}) => {
     className="w-full h-full  rounded-lg overflow-hidden block  bg-transparent relative"
    
   >
-    <img width={'100%'}  src={window.location.origin+'/'+image} className='object-cover h-48 ' alt="image 1" />
+    <img width={'100%'}  src={image} className='object-cover h-48 ' alt="image 1" />
     <div className="p-2 bg-slate-800/80  absolute bottom-0 z-10 left-0 w-full">
     <h5 className="md:text-lg font-medium capitalize  text-wf text-md ">
     {title}

@@ -19,10 +19,10 @@ import { ToastContainer } from "react-toastify"
 
     <Route element={<ContainerApp />} >
 
-    <Route element={<Home />}  path={"/:language"}  />
-    <Route element={<Dishes />}  path={"/:language/:categoryId/:CategoryDishes"}  />
-    <Route element={<SingleDish />}  path={"/:language/:categoryId/:CategoryDishes/:Dishid/:Dish"}  />
-    <Route element={<Cart />}  path={"/:language/Cart"}  />
+    <Route element={<Home />}  path={"/:language/:type"}  />
+    <Route element={<Dishes />}  path={"/:language/:type/:category_id/:CategoryDishes"}  />
+    <Route element={<SingleDish />}  path={"/:language/:type/:category_id/:CategoryDishes/:Dishid/:Dish"}  />
+    <Route element={<Cart />}  path={"/:language/:type/Cart"}  />
 
     </Route>
 

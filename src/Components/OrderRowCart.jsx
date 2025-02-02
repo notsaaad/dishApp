@@ -8,7 +8,7 @@ import { useDispatch } from "react-redux";
 
 const OrderRowCart = ({
   image,
-  title,
+  name,
   categorey,
   price,
   subTotal,
@@ -24,15 +24,15 @@ const OrderRowCart = ({
 
      <div className="image sm:w-24 w-12 sm p-1">
         <img
-          src={window.location.origin+'/'+image}
+          src={image}
           className="w-full aspect-square object-cover rounded-lg"
-          alt={title}
+          alt={name}
         />
       </div>
       <div className="information flex-grow px-1 flex sm:flex-col sm:items-start items-center justify-between ">
-        <p className="text-n1 text-lg font-medium">{title}</p>
+        <p className="text-n1 text-lg font-medium">{name}</p>
      
-        <p className="text-p3 text-lg font-bold">{price} $</p>
+        <p className="text-p3 text-lg font-bold">{price} AED</p>
       </div>
      </div>
  
