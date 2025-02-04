@@ -103,9 +103,9 @@ const navigate = useNavigate()
           </div>
     </div>
     <div className="leftSide">
-    <h5 className="Dish-title">{title}</h5>
-    <h5 className="Dish-Desc">{description}</h5>
-    <h5 className="Dish-Price">{price} $</h5>
+    <h5 className="Dish-title">{name}</h5>
+    <span className="Dish-Desc">{description}</span>
+    <h5 className="Dish-Price">{price} AED</h5>
     </div>
   </div>
 

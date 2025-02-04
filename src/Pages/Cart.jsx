@@ -49,7 +49,15 @@ const Cart = () => {
     if(address.length < 10){
       toast.warning("You Must Add your Full Address")
     } else {
+      
       window.location.href = res;
+      const submitOrder = async() =>{
+        const myData = [];
+        const results = await fetch("");
+      }
+
+
+
     }
     
   };
@@ -89,16 +97,16 @@ const Cart = () => {
                   <p className="text-md w-full flex justify-between items-center" key={i}>
                     <span className="font-bold text-n2 w-1/3 inline-block">{title} :</span>
                     <span className="font-medium text-n2 w-1/3 inline-block">
-                      {quantity} * {price} $
+                      {quantity} * {price} AED
                     </span>
-                    <span className="font-bold text-p2 inline-block">{price * quantity} $</span>
+                    <span className="font-bold text-p2 inline-block">{price * quantity} AED</span>
                   </p>
                 ))}
                 <span className="w-full min-h-[1px] bg-slate-400 block mt-2"></span>
                 <p className="text-2xl py-2 w-full flex justify-between items-center">
                   <span className="font-bold text-n2">Total :</span>
                   <span className="font-bold text-p2 ms-auto">
-                    {dataCart.reduce((acc, item) => acc + parseInt(item.price) * parseInt(item.quantity), 0)} $
+                    {dataCart.reduce((acc, item) => acc + parseInt(item.price) * parseInt(item.quantity), 0)} AED
                   </span>
                 </p>
                 <div className="w-full">
@@ -118,7 +126,7 @@ const Cart = () => {
                     Order Via Whatsapp <IoLogoWhatsapp className="text-lg animate-pulse" />
                   </div>
                 </Button>
-                <Link className="w-full mt-4 block border py-2 rounded-md bg-zinc-100" to={`/${language}`}>
+                <Link className="w-full mt-4 block border py-2 rounded-md bg-zinc-100" to={`/AED{language}`}>
                   <div className="w-full flex justify-center items-center gap-3 text-sm font-normal">
                     Continue Shopping
                   </div>
