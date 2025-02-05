@@ -29,8 +29,8 @@ export const MyNavbar = () =>{
       <Navbar.Brand >
 
         <Link to={`/`} active className="list-none flex p-0 m-0 ">
-        <img src={logoIcon} className="mr-3 w-16" alt="Flowbite React Logo" />
-        <span className="self-center whitespace-nowrap text-md md:text-xl font-semibold text-p2 ">Boba Bliss</span>
+        <img src={setting.logo} className="mr-3 w-16" alt="Flowbite React Logo" />
+        <span className="self-center whitespace-nowrap text-md md:text-xl  font-semibold text-b0 ">{setting.name}</span>
             </Link>
       </Navbar.Brand>
 

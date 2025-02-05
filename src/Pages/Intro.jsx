@@ -23,7 +23,7 @@ const Intro = () => {
     
     <div className="w-screen h-screen max-h-screen bg-wf flex justify-center items-center relative">
         <div className="image-back absolute inset-0 z-1 ">
-            <div className="bg-gradient-to-bl from-gray-800/10 to-75% to-p3 w-full h-full absolute inset-0 "></div>
+            <div className="bg-gradient-to-bl from-gray-800/10 to-75%  w-full h-full absolute inset-0 "></div>
             <img className="w-full h-full object-cover " src={setting.background} />
 
         </div>
@@ -40,8 +40,8 @@ const Intro = () => {
             </div>
             </div>
             <div className="links max-w-[380px] mx-auto px-5">
-                <Link to={`/${SelectLang}/0`} className="bg-p2 px-8 py-4 text-center rounded-lg shadow-md hover:shadow-2xl transition block text-wf font-semibold translate-y-1 hover:translate-y-0">طلبات قبل بيوم</Link>
-                <Link to={`/${SelectLang}/1`} className="mt-10 bg-p2 px-8 py-4 text-center rounded-lg shadow-md hover:shadow-2xl transition block text-wf font-semibold translate-y-1 hover:translate-y-0">الطلبات العادية</Link>
+                <Link to={`/${SelectLang}/1`} className="bg-p2 my-4  px-8 py-4 text-center rounded-lg shadow-md hover:shadow-2xl transition block text-b0 font-semibold translate-y-1 hover:translate-y-0">الطلبات العادية</Link>
+                <Link to={`/${SelectLang}/0`} className="bg-p2  px-8 py-4 text-center rounded-lg shadow-md hover:shadow-2xl transition block text-b0 font-semibold translate-y-1 hover:translate-y-0">طلبات قبل بيوم</Link>
             </div>
         </div>
     </div>

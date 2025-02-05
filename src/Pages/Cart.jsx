@@ -2,7 +2,7 @@ import { Button, Label, Textarea } from "flowbite-react";
 import { useState } from "react";
 import OrderRowCart from "../Components/OrderRowCart";
 import { useDispatch, useSelector } from "react-redux";
-import { Link, useParams } from "react-router-dom";
+import { json, Link, useParams } from "react-router-dom";
 import Home from "./Home";
 import { IoLogoWhatsapp } from "@react-icons/all-files/io/IoLogoWhatsapp";
 import {toast} from 'react-toastify'
@@ -11,16 +11,16 @@ const Cart = () => {
   const dataCart = useSelector(({ cart }) => cart);
   const dispatch = useDispatch();
 
- 
+  var data = [];
   const [address, setAddress] = useState("");
 
   const handleConfirmOrder = () => {
     const header = "https://api.whatsapp.com/send/?phone=";
-    const phone = "971581909512";
-    //00971581909512
+    const phone = "971581186100";
+    //00971581909512 //971581186100
     const text = encodeURIComponent("Hello, I would like to order");
     let summaryOrder = "";
-
+    let counter  = 0;
     dataCart.forEach((el) => {
       const item =
       encodeURIComponent("------------------------")+
@@ -37,8 +37,18 @@ const Cart = () => {
         "%0A" +
         encodeURIComponent("------------------------") +
         "%0A";
+        var order_key_QT        = `order[${counter}][quantity]`;
+        var order_key_Price     = `order[${counter}][price]`;
+        var order_key_address   = `order[${counter}][address]`;
+        var order_key_menuID    = `order[${counter}][menu_id]`;
+        data[order_key_QT]      = el.quantity;
+        data[order_key_Price]   = el.price;
+        data[order_key_address] = address;
+        data[order_key_menuID]  = el.id;
       summaryOrder += item;
+      counter++;
     });
+    
 
     const addressText =
 
@@ -50,23 +60,32 @@ const Cart = () => {
       toast.warning("You Must Add your Full Address")
     } else {
       
-      window.location.href = res;
+
       const submitOrder = async() =>{
-        const myData = [];
-        const results = await fetch("");
+        
+        const results = await fetch("https://api.bobabliss.online/api/orders",{
+          method: 'POST',
+          headers: {
+            'Content-Type' : 'application/json'
+          },
+          body: JSON.stringify(data)
+        });
+
+        const ResultJson = await results.json;
+        console.log(ResultJson);
       }
 
-
+      submitOrder();
 
     }
-    
+          window.location.href = res;
   };
 
   return (
     <div>
       {dataCart?.length === 0 ? (
         <div>
-          <h1 className="text-center py-5 bg-p2 text-lg font-bold text-wf">Cart</h1>
+          <h1 className="text-center py-5 bg-b0 text-lg font-bold text-wf">Cart</h1>
           <div className="flex justify-center items-center text-3xl mt-5">
             Your Cart is Empty
           </div>
@@ -75,7 +94,7 @@ const Cart = () => {
         </div>
       ) : (
         <>
-          <h1 className="text-center py-5 bg-p2 text-lg font-bold text-wf">Cart</h1>
+          <h1 className="text-center py-5 bg-b0 text-lg font-bold text-wf">Cart</h1>
           <div className="flex flex-col md:flex-row py-5 bg-slate-100">
             <ul className="p-1 md:w-2/3 w-full">
               {dataCart.map(({ title, categorey, image, price, quantity, subTotal, id }, i) => (
@@ -99,13 +118,13 @@ const Cart = () => {
                     <span className="font-medium text-n2 w-1/3 inline-block">
                       {quantity} * {price} AED
                     </span>
-                    <span className="font-bold text-p2 inline-block">{price * quantity} AED</span>
+                    <span className="font-bold  inline-block">{price * quantity} AED</span>
                   </p>
                 ))}
                 <span className="w-full min-h-[1px] bg-slate-400 block mt-2"></span>
                 <p className="text-2xl py-2 w-full flex justify-between items-center">
                   <span className="font-bold text-n2">Total :</span>
-                  <span className="font-bold text-p2 ms-auto">
+                  <span className="font-bold  ms-auto">
                     {dataCart.reduce((acc, item) => acc + parseInt(item.price) * parseInt(item.quantity), 0)} AED
                   </span>
                 </p>
@@ -121,9 +140,9 @@ const Cart = () => {
                     onChange={(e) => setAddress(e.target.value)}
                   />
                 </div>
-                <Button className="w-full mt-8" color="success" onClick={handleConfirmOrder}>
-                  <div className="w-full flex justify-center items-center gap-3">
-                    Order Via Whatsapp <IoLogoWhatsapp className="text-lg animate-pulse" />
+                <Button className="w-full bg-b0 mt-8 Order_whatsapp" color="" onClick={handleConfirmOrder}>
+                  <div className="w-full text-wf  flex justify-center items-center gap-3">
+                    Order Via Whatsapp <IoLogoWhatsapp className="text-lg  animate-pulse" />
                   </div>
                 </Button>
                 <Link className="w-full mt-4 block border py-2 rounded-md bg-zinc-100" to={`/AED{language}`}>
@@ -148,7 +167,7 @@ const Cart = () => {
                     onChange={(e) => setAddress(e.target.value)}
                   />
           <Button className="" color="success" onClick={handleConfirmOrder}>
-                  <div className="w-full flex justify-center items-center gap-3 text-xs">
+                  <div className="w-full  Button_order_now flex justify-center items-center gap-3 text-xs">
                     Order Now<IoLogoWhatsapp className="text-xl md:text-lg animate-pulse" />
                   </div>
           </Button>

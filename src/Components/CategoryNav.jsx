@@ -51,7 +51,7 @@ const CategoryNav = () => {
                     return(
                         <Link className=' inline-block  py-2 pe-1.5 ' key={i} to={`/${language}/${Type}/${id}/${encodeURI(name.replace(/ /g,"-"))}`}>
                         <div className=" relative rounded-2xl overflow-hidden">
-                        <div className="py-4 px-3 w-full h-full inset-0 flex justify-center items-center 
+                        <div className="py-4 text-b0 px-3 w-full h-full inset-0 flex justify-center items-center 
                             capitalize text-center z-20 relative
                             text-md Active_title_nav_cat
                         ">
@@ -66,7 +66,7 @@ const CategoryNav = () => {
                         <div className=" relative rounded-2xl overflow-hidden">
                         <div className="py-4 px-3 w-full h-full inset-0 flex justify-center items-center 
                             capitalize text-center z-20 relative
-                            text-md
+                            text-md text-b0
                         ">
                             {name}
                         </div>

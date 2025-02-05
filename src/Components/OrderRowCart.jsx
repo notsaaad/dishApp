@@ -32,7 +32,7 @@ const OrderRowCart = ({
       <div className="information flex-grow px-1 flex sm:flex-col sm:items-start items-center justify-between ">
         <p className="text-n1 text-lg font-medium">{name}</p>
      
-        <p className="text-p3 text-lg font-bold">{price} AED</p>
+        <p className=" text-lg font-bold">{price} AED</p>
       </div>
      </div>
  

@@ -21,7 +21,7 @@ const DishCard = ({ product }) => {
     }, [] );
   
     // ======================= End Fatch  API menu =========================
-  const { link, price, image, title,description,category_id,CategoryDishes,id } = product;
+  const { link, price, image, name,description,category_id,CategoryDishes,id } = product;
   const { language, type } = useParams();
 
   const [quantity, setQuantity] = useState(1);
@@ -56,7 +56,7 @@ const DishCard = ({ product }) => {
 const navigate = useNavigate()
   const dispatch = useDispatch()
   const handelOrder = () =>{
-    dispatch(AddToCart({ ...product, quantity: quantity,link:`${window.location.protocol}/${window.location.hostname}/${language}/${category_id}/${encodeURI(CategoryDishes?.replace(/ /g,"-"))}/${id}/${encodeURI(title?.replace(/ /g,"-"))}` }));
+    dispatch(AddToCart({ ...product, quantity: quantity,link:`${window.location.protocol}/${window.location.hostname}/${language}/${category_id}/${encodeURI(CategoryDishes?.replace(/ /g,"-"))}/${id}/${encodeURI(name?.replace(/ /g,"-"))}` }));
 
     navigate(`/${language}/${type}/Cart`)
   }
@@ -69,13 +69,13 @@ const navigate = useNavigate()
       <div className="CartSection">
           {inCart ? (
               <div className="Cart_added">
-                <Link className="underline text-p3 " to={`/${language}/${type}/Cart`}>
+                <Link className="viewcart-link" to={`/${language}/${type}/Cart`}>
                 View Cart
                 </Link>
                 <Button
-                  color="failure"
+                  color=""
                   type=""
-                  className=""
+                  className="Remove-item-icon"
                   onClick={() => {
                     dispatch(RemoveFromCart(product));
                   }}

@@ -26,7 +26,7 @@ const Dishes = () => {
 return (
   <div className="w-full mt-5">
 
-      <h3 className="text-lg capitalize px-3 font-medium">{CategoryDishes.replace(/-/g," ") }  Dishes</h3>
+      <h3 className="text-lg capitalize px-3 font-medium">{CategoryDishes.replace(/-/g," ") } </h3>
       <div className="categories-cards flex justify-center flex-wrap ">
         
           {
